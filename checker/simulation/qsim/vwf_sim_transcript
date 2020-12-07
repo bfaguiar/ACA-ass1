@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source="C:/Users/Bruno/Documents/Assignment1/checker/Waveform2.vwf" --testbench_file="C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform2.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source="C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf" --testbench_file="C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Dec 07 18:54:15 2020
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform2.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform2.vwf.vht
+    Info: Processing started: Mon Dec 07 19:10:38 2020
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -53,14 +53,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Mon Dec 07 18:54:16 2020
+    Info: Processing started: Mon Dec 07 19:10:39 2020
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file checker.vho in folder "C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4710 megabytes
-    Info: Processing ended: Mon Dec 07 18:54:17 2020
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Mon Dec 07 19:10:39 2020
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -79,11 +79,11 @@ Reading pref.tcl
 
 # 2020.1
 
-# do checker.do
 
+# do checker.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:54:18 on Dec 07,2020
+# Start time: 19:10:40 on Dec 07,2020
 # vcom -work work checker.vho 
 
 # -- Loading package STANDARD
@@ -99,23 +99,23 @@ Reading pref.tcl
 # -- Loading package altera_primitives_components
 # -- Compiling entity checker
 # -- Compiling architecture structure of checker
-# End time: 18:54:18 on Dec 07,2020, Elapsed time: 0:00:00
+# End time: 19:10:40 on Dec 07,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:54:18 on Dec 07,2020
-# vcom -work work Waveform2.vwf.vht 
+# Start time: 19:10:40 on Dec 07,2020
+# vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity checker_vhd_vec_tst
 # -- Compiling architecture checker_arch of checker_vhd_vec_tst
-# End time: 18:54:18 on Dec 07,2020, Elapsed time: 0:00:00
+# End time: 19:10:40 on Dec 07,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneiv -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.checker_vhd_vec_tst 
-# Start time: 18:54:18 on Dec 07,2020
+# Start time: 19:10:40 on Dec 07,2020
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -137,20 +137,20 @@ Reading pref.tcl
 # Loading altera.dffeas(vital_dffeas)
 # after#35
 
-# End time: 18:54:19 on Dec 07,2020, Elapsed time: 0:00:01
+# End time: 19:10:41 on Dec 07,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Bruno/Documents/Assignment1/checker/Waveform2.vwf...
+Reading C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf...
 
 Reading C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/checker.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/checker_20201207185419.sim.vwf
+Writing the resulting VWF to C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/checker_20201207191042.sim.vwf
 
 Finished VCD to VWF conversion.
 

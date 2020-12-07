@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/07/2020 18:36:37"
+-- Generated on "12/07/2020 19:10:38"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          checker
 -- 
@@ -40,10 +40,10 @@ SIGNAL data_in : STD_LOGIC;
 SIGNAL rem_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT checker
 	PORT (
-	checker_flag : OUT STD_LOGIC;
+	checker_flag : BUFFER STD_LOGIC;
 	clk : IN STD_LOGIC;
 	data_in : IN STD_LOGIC;
-	rem_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	rem_out : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -64,7 +64,7 @@ LOOP
 	WAIT FOR 5000 ps;
 	clk <= '1';
 	WAIT FOR 5000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+	IF (NOW >= 280000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_clk;
 
@@ -72,9 +72,9 @@ END PROCESS t_prcs_clk;
 t_prcs_data_in: PROCESS
 BEGIN
 	data_in <= '1';
-	WAIT FOR 50000 ps;
+	WAIT FOR 40000 ps;
 	data_in <= '0';
-	WAIT FOR 30000 ps;
+	WAIT FOR 40000 ps;
 	data_in <= '1';
 	WAIT FOR 10000 ps;
 	data_in <= '0';

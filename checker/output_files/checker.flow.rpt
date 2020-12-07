@@ -1,5 +1,5 @@
 Flow report for checker
-Mon Dec 07 18:54:17 2020
+Mon Dec 07 19:10:39 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Dec 07 18:54:17 2020       ;
+; Flow Status                        ; Successful - Mon Dec 07 19:10:39 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; checker                                     ;
 ; Top-level Entity Name              ; checker                                     ;
@@ -107,7 +107,19 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4709 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:32                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -123,6 +135,18 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -135,6 +159,18 @@ quartus_asm --read_settings_files=off --write_settings_files=off checker -c chec
 quartus_sta checker -c checker
 quartus_eda --read_settings_files=off --write_settings_files=off checker -c checker
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform2.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform2.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
 
 

@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim
 Echecker
-Z1 w1607367257
+Z1 w1607368239
 Z2 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ^M[R>L941CzW^5^z4gfb52
 Z3 DPx9 cycloneiv 20 cycloneiv_components 0 22 A=5Z=j^V:4BYGPNKNFE9o0
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -19,7 +19,7 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 260
+!i122 272
 R0
 Z10 8checker.vho
 Z11 Fchecker.vho
@@ -29,9 +29,9 @@ V@?0M]Tm?lh;_f2X85P6Qg3
 !s100 jg1oOX0MNnElo1Pm7a4jA3
 Z12 OV;C;2020.1;71
 32
-Z13 !s110 1607367258
+Z13 !s110 1607368240
 !i10b 1
-Z14 !s108 1607367258.000000
+Z14 !s108 1607368240.000000
 Z15 !s90 -work|work|checker.vho|
 Z16 !s107 checker.vho|
 !i113 1
@@ -47,7 +47,7 @@ R7
 R8
 R9
 DEx4 work 7 checker 0 22 @?0M]Tm?lh;_f2X85P6Qg3
-!i122 260
+!i122 272
 l167
 L103 695
 VLUOC6BY:QEAiF9YOmj@D@3
@@ -63,13 +63,13 @@ R16
 R17
 R18
 Echecker_vhd_vec_tst
-Z19 w1607367256
+Z19 w1607368238
 R7
 R8
-!i122 261
+!i122 273
 R0
-Z20 8Waveform2.vwf.vht
-Z21 FWaveform2.vwf.vht
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
 l0
 L32 1
 V0e5Kl@6]R<Uk=L_0D:f[a0
@@ -79,8 +79,8 @@ R12
 R13
 !i10b 1
 R14
-Z22 !s90 -work|work|Waveform2.vwf.vht|
-Z23 !s107 Waveform2.vwf.vht|
+Z22 !s90 -work|work|Waveform.vwf.vht|
+Z23 !s107 Waveform.vwf.vht|
 !i113 1
 R17
 R18
@@ -88,11 +88,11 @@ Achecker_arch
 R7
 R8
 Z24 DEx4 work 19 checker_vhd_vec_tst 0 22 0e5Kl@6]R<Uk=L_0D:f[a0
-!i122 261
+!i122 273
 l49
-Z25 L34 86
-V8?7hSAQLReQn]N9A@gg9:1
-!s100 a9[LidjQf]0mNo@EKZ]3F2
+Z25 L34 66
+VW2g=`Y7d2CP5LZJNSVQom1
+!s100 1ZgB;69B940=W4oimdPHo3
 R12
 32
 R13
@@ -111,7 +111,7 @@ R6
 R7
 R8
 R3
-!i122 260
+!i122 272
 R0
 R10
 R11
@@ -137,7 +137,7 @@ R7
 R8
 R3
 DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
-!i122 260
+!i122 272
 l65
 L51 20
 VMkbPfL8S?h^i>Mg3GSGD`1
