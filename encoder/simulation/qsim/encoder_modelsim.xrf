@@ -4,6 +4,7 @@ source_file = 1, C:/Users/Bruno/Documents/Assignment1/encoder/encoder.vhd
 source_file = 1, run1.vwf
 source_file = 1, simulation/qsim/run1.vwf
 source_file = 1, C:/Users/Bruno/Documents/Assignment1/encoder/Waveform.vwf
+source_file = 1, C:/Users/Bruno/Documents/Assignment1/encoder/Waveform1.vwf
 source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/20.1/quartus/libraries/vhdl/ieee/timing_b.vhd

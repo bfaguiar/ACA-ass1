@@ -1,5 +1,5 @@
 Flow report for encoder
-Sun Dec 06 17:40:20 2020
+Sun Dec 06 19:03:25 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec 06 17:40:20 2020       ;
+; Flow Status                        ; Successful - Sun Dec 06 19:03:25 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; encoder                                     ;
 ; Top-level Entity Name              ; encoder                                     ;
@@ -109,7 +109,10 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4706 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4706 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4711 MB             ; 00:00:01                           ;
-; Total                ; 00:00:16     ; --                      ; --                  ; 00:00:32                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4706 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4706 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4711 MB             ; 00:00:01                           ;
+; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -127,6 +130,9 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -139,6 +145,9 @@ quartus_asm --read_settings_files=off --write_settings_files=off encoder -c enco
 quartus_sta encoder -c encoder
 quartus_eda --read_settings_files=off --write_settings_files=off encoder -c encoder
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off encoder -c encoder --vector_source=C:/Users/Bruno/Documents/Assignment1/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/simulation/qsim/Waveform.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off encoder -c encoder --vector_source=C:/Users/Bruno/Documents/Assignment1/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/encoder/simulation/qsim/Waveform.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off encoder -c encoder --vector_source=C:/Users/Bruno/Documents/Assignment1/encoder/Waveform1.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/encoder/simulation/qsim/Waveform1.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/encoder/simulation/qsim/ encoder -c encoder
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off encoder -c encoder --vector_source=C:/Users/Bruno/Documents/Assignment1/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/encoder/simulation/qsim/Waveform.vwf.vht
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off encoder -c encoder --vector_source=C:/Users/Bruno/Documents/Assignment1/encoder/Waveform1.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/encoder/simulation/qsim/Waveform1.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/encoder/simulation/qsim/ encoder -c encoder
