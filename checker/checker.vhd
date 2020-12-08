@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 entity checker is
 	port(clk    : in  std_logic;
 		  data_in : in  std_logic;
-		  checker_flag  : out std_logic;
-		  rem_out : out std_logic_vector(7 downto 0));
+		  error  : out std_logic);
+		  
 end checker;
 
 architecture structure of checker is
@@ -58,8 +58,7 @@ architecture structure of checker is
 	-- ROM de Controlo
 		cR1 : controlROM port map(clk, reminder, s_flag);
 	
-	checker_flag <= s_flag;
-	rem_out <= reminder;
+	error <= s_flag;
  
 end structure;
 
@@ -86,9 +85,7 @@ begin
 		if (clk = '1') AND (clk'EVENT) 
 			then if(s_clkCounter = "11000") 
 				then s_clkCounter <= "00000";
-				if (rem_in = "00000000") 
-					then flag <= '1';
-				end if;
+				flag <= (rem_in(0) or rem_in(1) or rem_in(2) or rem_in(3) or rem_in(4) or rem_in(5) or rem_in(6) or rem_in(7));
 			end if;
 			s_clkCounter <= std_logic_vector(unsigned(s_clkCounter) + 1);
 		end if;

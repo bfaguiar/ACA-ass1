@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/07/2020 19:10:38"
+-- Generated on "12/08/2020 14:51:42"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          checker
 -- 
@@ -34,26 +34,23 @@ END checker_vhd_vec_tst;
 ARCHITECTURE checker_arch OF checker_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL checker_flag : STD_LOGIC;
 SIGNAL clk : STD_LOGIC;
 SIGNAL data_in : STD_LOGIC;
-SIGNAL rem_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL error : STD_LOGIC;
 COMPONENT checker
 	PORT (
-	checker_flag : BUFFER STD_LOGIC;
 	clk : IN STD_LOGIC;
 	data_in : IN STD_LOGIC;
-	rem_out : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
+	error : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
 	i1 : checker
 	PORT MAP (
 -- list connections between master ports and signals
-	checker_flag => checker_flag,
 	clk => clk,
 	data_in => data_in,
-	rem_out => rem_out
+	error => error
 	);
 
 -- clk
@@ -72,9 +69,9 @@ END PROCESS t_prcs_clk;
 t_prcs_data_in: PROCESS
 BEGIN
 	data_in <= '1';
-	WAIT FOR 40000 ps;
+	WAIT FOR 30000 ps;
 	data_in <= '0';
-	WAIT FOR 40000 ps;
+	WAIT FOR 50000 ps;
 	data_in <= '1';
 	WAIT FOR 10000 ps;
 	data_in <= '0';

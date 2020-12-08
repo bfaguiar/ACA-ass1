@@ -1,5 +1,5 @@
 Timing Analyzer report for checker
-Mon Dec 07 18:53:57 2020
+Tue Dec 08 14:48:30 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -104,7 +104,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.2%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processors 3-4         ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -122,7 +123,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 631.31 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 629.33 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,7 +139,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; clk   ; -0.584 ; -2.460             ;
+; clk   ; -0.589 ; -2.266             ;
 +-------+--------+--------------------+
 
 
@@ -147,7 +148,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; clk   ; 0.342 ; 0.000              ;
+; clk   ; 0.341 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -177,47 +178,47 @@ No paths to report.
 +--------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
-; -0.584 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.856      ;
-; -0.575 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.506      ;
+; -0.589 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.861      ;
+; -0.583 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.855      ;
+; -0.574 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.505      ;
 ; -0.495 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.426      ;
 ; -0.492 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.423      ;
-; -0.462 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.393      ;
+; -0.482 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.754      ;
 ; -0.462 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.393      ;
-; -0.443 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.715      ;
-; -0.436 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.708      ;
-; -0.414 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.686      ;
-; -0.331 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.603      ;
-; -0.325 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.078     ; 1.242      ;
-; -0.325 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.597      ;
-; -0.314 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.586      ;
-; -0.281 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.553      ;
-; -0.279 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.551      ;
-; -0.237 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.509      ;
+; -0.461 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.392      ;
+; -0.444 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.716      ;
+; -0.387 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.079     ; 1.303      ;
+; -0.372 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.644      ;
+; -0.363 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.635      ;
+; -0.362 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.634      ;
+; -0.306 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.578      ;
+; -0.252 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.524      ;
 ; -0.237 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.509      ;
-; -0.228 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.500      ;
-; -0.212 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 1.143      ;
-; -0.205 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.477      ;
-; -0.192 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.064     ; 1.123      ;
-; -0.145 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.417      ;
-; -0.138 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.410      ;
-; -0.118 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 1.049      ;
-; -0.074 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 1.005      ;
+; -0.236 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.508      ;
+; -0.227 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.499      ;
+; -0.214 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 1.145      ;
+; -0.189 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.461      ;
+; -0.187 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.459      ;
+; -0.119 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.277      ; 1.391      ;
 ; -0.065 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.064     ; 0.996      ;
+; -0.063 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.994      ;
+; -0.062 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.993      ;
+; -0.061 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.064     ; 0.992      ;
 ; -0.060 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.064     ; 0.991      ;
-; -0.048 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.979      ;
-; -0.045 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.317      ;
-; -0.043 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.974      ;
-; -0.039 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.064     ; 0.970      ;
-; 0.079  ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.852      ;
-; 0.105  ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.826      ;
-; 0.175  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.756      ;
-; 0.176  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.755      ;
-; 0.177  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.754      ;
-; 0.179  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.752      ;
-; 0.214  ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.717      ;
-; 0.221  ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; -0.078     ; 0.696      ;
+; -0.038 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.064     ; 0.969      ;
+; -0.003 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.934      ;
+; 0.022  ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.277      ; 1.250      ;
+; 0.078  ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.853      ;
+; 0.091  ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.840      ;
+; 0.099  ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.832      ;
+; 0.181  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.750      ;
+; 0.181  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.750      ;
+; 0.182  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.749      ;
+; 0.188  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.743      ;
+; 0.199  ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; -0.079     ; 0.717      ;
+; 0.228  ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 1.000        ; -0.064     ; 0.703      ;
 ; 0.272  ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 1.000        ; -0.064     ; 0.659      ;
-; 0.280  ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.078     ; 0.637      ;
+; 0.279  ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.079     ; 0.637      ;
 +--------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -226,47 +227,47 @@ No paths to report.
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.342 ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.078      ; 0.577      ;
+; 0.341 ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.079      ; 0.577      ;
 ; 0.359 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.580      ;
-; 0.362 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.078      ; 0.597      ;
-; 0.394 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.615      ;
-; 0.416 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.637      ;
-; 0.417 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.638      ;
-; 0.417 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.638      ;
-; 0.418 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.639      ;
-; 0.530 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.751      ;
-; 0.540 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.761      ;
-; 0.562 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.783      ;
-; 0.572 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.793      ;
-; 0.577 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.798      ;
-; 0.591 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.419      ; 1.167      ;
-; 0.607 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.419      ; 1.183      ;
-; 0.608 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.419      ; 1.184      ;
-; 0.625 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.201      ;
-; 0.628 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.849      ;
-; 0.636 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.857      ;
-; 0.648 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.419      ; 1.224      ;
-; 0.662 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.883      ;
-; 0.681 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.902      ;
-; 0.696 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.272      ;
-; 0.716 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.937      ;
-; 0.733 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.309      ;
-; 0.748 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.969      ;
-; 0.784 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.360      ;
-; 0.805 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.381      ;
-; 0.836 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.057      ;
-; 0.840 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.078      ; 1.075      ;
-; 0.850 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.071      ;
-; 0.851 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.072      ;
-; 0.852 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.073      ;
-; 0.853 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.074      ;
-; 0.900 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.476      ;
-; 0.915 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.491      ;
-; 0.943 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.519      ;
-; 1.022 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.598      ;
-; 1.045 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.621      ;
-; 1.047 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.623      ;
-; 1.193 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.419      ; 1.769      ;
+; 0.380 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.079      ; 0.616      ;
+; 0.389 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.610      ;
+; 0.409 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.630      ;
+; 0.414 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.635      ;
+; 0.414 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.635      ;
+; 0.415 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.636      ;
+; 0.485 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.706      ;
+; 0.493 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.420      ; 1.070      ;
+; 0.525 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.746      ;
+; 0.534 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.755      ;
+; 0.561 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.782      ;
+; 0.561 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.782      ;
+; 0.573 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.794      ;
+; 0.576 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.064      ; 0.797      ;
+; 0.582 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.159      ;
+; 0.585 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.806      ;
+; 0.586 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.807      ;
+; 0.589 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.420      ; 1.166      ;
+; 0.591 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.168      ;
+; 0.606 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.827      ;
+; 0.606 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.420      ; 1.183      ;
+; 0.607 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.420      ; 1.184      ;
+; 0.706 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.283      ;
+; 0.725 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.064      ; 0.946      ;
+; 0.756 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.333      ;
+; 0.774 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.079      ; 1.010      ;
+; 0.808 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.385      ;
+; 0.811 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.388      ;
+; 0.826 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.403      ;
+; 0.835 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.056      ;
+; 0.850 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.071      ;
+; 0.851 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.072      ;
+; 0.852 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.073      ;
+; 0.853 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.064      ; 1.074      ;
+; 0.887 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.464      ;
+; 0.937 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.514      ;
+; 1.027 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.604      ;
+; 1.072 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.649      ;
+; 1.074 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.420      ; 1.651      ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -281,7 +282,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 703.73 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 715.31 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -291,7 +292,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -0.421 ; -1.340            ;
+; clk   ; -0.398 ; -1.272            ;
 +-------+--------+-------------------+
 
 
@@ -330,45 +331,45 @@ No paths to report.
 +--------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
-; -0.421 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.671      ;
-; -0.397 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.335      ;
-; -0.333 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.271      ;
+; -0.398 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.648      ;
+; -0.396 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.334      ;
+; -0.393 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.643      ;
+; -0.332 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.270      ;
 ; -0.327 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.265      ;
-; -0.305 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.243      ;
-; -0.305 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.243      ;
-; -0.292 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.542      ;
-; -0.286 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.536      ;
-; -0.266 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.516      ;
-; -0.193 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.443      ;
-; -0.192 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.442      ;
-; -0.176 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.426      ;
-; -0.175 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.070     ; 1.100      ;
-; -0.141 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.391      ;
-; -0.125 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.375      ;
-; -0.093 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.343      ;
-; -0.093 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.343      ;
-; -0.086 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.336      ;
-; -0.076 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 1.014      ;
-; -0.067 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.317      ;
-; -0.057 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.995      ;
-; -0.034 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.284      ;
-; -0.003 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.253      ;
-; 0.007  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.931      ;
-; 0.043  ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.895      ;
-; 0.055  ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.883      ;
-; 0.060  ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.878      ;
-; 0.060  ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.190      ;
+; -0.306 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.244      ;
+; -0.304 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.554      ;
+; -0.304 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.057     ; 1.242      ;
+; -0.274 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.524      ;
+; -0.231 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.070     ; 1.156      ;
+; -0.231 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.481      ;
+; -0.223 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.473      ;
+; -0.201 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.451      ;
+; -0.147 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.397      ;
+; -0.131 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.381      ;
+; -0.094 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.344      ;
+; -0.092 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.342      ;
+; -0.078 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 1.016      ;
+; -0.066 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.316      ;
+; -0.046 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.296      ;
+; -0.042 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.292      ;
+; 0.009  ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.255      ; 1.241      ;
+; 0.056  ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.882      ;
+; 0.058  ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.880      ;
+; 0.058  ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.880      ;
+; 0.060  ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.878      ;
 ; 0.061  ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.877      ;
-; 0.068  ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.870      ;
-; 0.071  ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.867      ;
-; 0.173  ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.765      ;
-; 0.206  ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.732      ;
-; 0.258  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.680      ;
-; 0.259  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.679      ;
-; 0.260  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.678      ;
-; 0.262  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.676      ;
-; 0.295  ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.643      ;
-; 0.300  ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; -0.070     ; 0.625      ;
+; 0.072  ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.866      ;
+; 0.106  ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.832      ;
+; 0.139  ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.255      ; 1.111      ;
+; 0.184  ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.754      ;
+; 0.185  ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.753      ;
+; 0.197  ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.741      ;
+; 0.264  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.674      ;
+; 0.264  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.674      ;
+; 0.264  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.674      ;
+; 0.271  ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.667      ;
+; 0.281  ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; -0.070     ; 0.644      ;
+; 0.316  ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 1.000        ; -0.057     ; 0.622      ;
 ; 0.355  ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 1.000        ; -0.057     ; 0.583      ;
 ; 0.363  ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.070     ; 0.562      ;
 +--------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
@@ -381,45 +382,45 @@ No paths to report.
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.297 ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.070      ; 0.511      ;
 ; 0.318 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.519      ;
-; 0.321 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.070      ; 0.535      ;
-; 0.350 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.551      ;
-; 0.372 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.573      ;
-; 0.374 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.575      ;
-; 0.374 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.575      ;
-; 0.375 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.576      ;
-; 0.484 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.685      ;
-; 0.488 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.689      ;
-; 0.507 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.708      ;
-; 0.516 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 1.042      ;
+; 0.339 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.070      ; 0.553      ;
+; 0.351 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.552      ;
+; 0.365 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.566      ;
+; 0.371 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.572      ;
+; 0.371 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.572      ;
+; 0.372 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.573      ;
+; 0.431 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 0.957      ;
+; 0.432 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.633      ;
+; 0.474 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.675      ;
+; 0.492 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.693      ;
+; 0.506 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.707      ;
+; 0.507 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.708      ;
+; 0.508 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.034      ;
+; 0.515 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 1.041      ;
 ; 0.519 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.720      ;
-; 0.523 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.724      ;
-; 0.529 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 1.055      ;
+; 0.522 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.723      ;
+; 0.526 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.727      ;
+; 0.527 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.728      ;
+; 0.528 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.054      ;
+; 0.528 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 1.054      ;
 ; 0.529 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 1.055      ;
-; 0.546 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.072      ;
-; 0.566 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.767      ;
-; 0.569 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.382      ; 1.095      ;
-; 0.576 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.777      ;
-; 0.598 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.799      ;
-; 0.619 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.820      ;
-; 0.623 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.149      ;
-; 0.643 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.169      ;
-; 0.651 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.852      ;
-; 0.679 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.880      ;
-; 0.694 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.220      ;
-; 0.727 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.253      ;
-; 0.752 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.953      ;
-; 0.758 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.959      ;
+; 0.547 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.748      ;
+; 0.626 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.152      ;
+; 0.663 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.057      ; 0.864      ;
+; 0.694 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.220      ;
+; 0.704 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.070      ; 0.918      ;
+; 0.720 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.246      ;
+; 0.724 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.250      ;
+; 0.746 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.272      ;
+; 0.751 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.952      ;
+; 0.757 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.958      ;
 ; 0.758 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.959      ;
-; 0.761 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.070      ; 0.975      ;
-; 0.765 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.966      ;
+; 0.764 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.965      ;
 ; 0.765 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.057      ; 0.966      ;
-; 0.796 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.322      ;
-; 0.809 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.335      ;
-; 0.829 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.355      ;
-; 0.906 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.432      ;
-; 0.923 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.449      ;
-; 0.927 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.453      ;
-; 1.068 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.594      ;
+; 0.805 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.331      ;
+; 0.847 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.373      ;
+; 0.936 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.462      ;
+; 0.968 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.494      ;
+; 0.970 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.382      ; 1.496      ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -434,7 +435,7 @@ No synchronizer chains to report.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; clk   ; 0.121 ; 0.000              ;
+; clk   ; 0.106 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -464,7 +465,7 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -17.498                         ;
+; clk   ; -3.000 ; -17.416                         ;
 +-------+--------+---------------------------------+
 
 
@@ -473,46 +474,46 @@ No paths to report.
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.121 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.830      ;
-; 0.127 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 1.010      ;
-; 0.169 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.782      ;
-; 0.169 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.782      ;
-; 0.194 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.757      ;
-; 0.197 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.754      ;
-; 0.198 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.939      ;
-; 0.199 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.938      ;
-; 0.225 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.912      ;
-; 0.256 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.045     ; 0.686      ;
-; 0.256 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.881      ;
-; 0.271 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.866      ;
-; 0.275 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.862      ;
-; 0.283 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.854      ;
-; 0.303 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.150      ; 0.834      ;
-; 0.305 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.150      ; 0.832      ;
-; 0.312 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.150      ; 0.825      ;
-; 0.315 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.150      ; 0.822      ;
-; 0.319 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.632      ;
-; 0.328 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.623      ;
-; 0.343 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.794      ;
-; 0.363 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.774      ;
-; 0.371 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.580      ;
-; 0.380 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.757      ;
-; 0.397 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.554      ;
-; 0.404 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.547      ;
-; 0.405 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.546      ;
-; 0.414 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.537      ;
-; 0.414 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.537      ;
-; 0.423 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.528      ;
-; 0.436 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.150      ; 0.701      ;
-; 0.495 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.456      ;
-; 0.498 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.453      ;
-; 0.535 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.416      ;
-; 0.536 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.415      ;
-; 0.537 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.414      ;
-; 0.539 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.412      ;
-; 0.561 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.036     ; 0.390      ;
-; 0.563 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 0.379      ;
-; 0.592 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 1.000        ; -0.036     ; 0.359      ;
+; 0.106 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 1.030      ;
+; 0.111 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 1.025      ;
+; 0.120 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.830      ;
+; 0.165 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.971      ;
+; 0.168 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.782      ;
+; 0.168 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.782      ;
+; 0.188 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.948      ;
+; 0.194 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.756      ;
+; 0.196 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.754      ;
+; 0.224 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.045     ; 0.718      ;
+; 0.233 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.903      ;
+; 0.247 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.889      ;
+; 0.253 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.883      ;
+; 0.263 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.873      ;
+; 0.302 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.149      ; 0.834      ;
+; 0.309 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.827      ;
+; 0.312 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.149      ; 0.824      ;
+; 0.314 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.149      ; 0.822      ;
+; 0.318 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.632      ;
+; 0.326 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.810      ;
+; 0.333 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.803      ;
+; 0.382 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; 0.149      ; 0.754      ;
+; 0.402 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.548      ;
+; 0.403 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.547      ;
+; 0.404 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.546      ;
+; 0.404 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.546      ;
+; 0.405 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.545      ;
+; 0.413 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.537      ;
+; 0.438 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.512      ;
+; 0.445 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; 0.149      ; 0.691      ;
+; 0.478 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.472      ;
+; 0.498 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.452      ;
+; 0.504 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.446      ;
+; 0.539 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.411      ;
+; 0.540 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.410      ;
+; 0.540 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.410      ;
+; 0.546 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.404      ;
+; 0.551 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 1.000        ; -0.045     ; 0.391      ;
+; 0.567 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 1.000        ; -0.037     ; 0.383      ;
+; 0.591 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 1.000        ; -0.037     ; 0.359      ;
 ; 0.592 ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 1.000        ; -0.045     ; 0.350      ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 
@@ -523,46 +524,46 @@ No paths to report.
 ; Slack ; From Node                      ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.178 ; controlROM:cR1|flag            ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.045      ; 0.307      ;
-; 0.189 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.045      ; 0.318      ;
-; 0.194 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.314      ;
-; 0.208 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.328      ;
-; 0.223 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.343      ;
-; 0.225 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.345      ;
-; 0.225 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.345      ;
-; 0.226 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.346      ;
-; 0.273 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.393      ;
-; 0.283 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.403      ;
-; 0.303 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.423      ;
-; 0.309 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.429      ;
-; 0.311 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.431      ;
+; 0.193 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[0] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.314      ;
+; 0.201 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.045      ; 0.330      ;
+; 0.203 ; DFlipFlop:flipFlop7|Q          ; DFlipFlop:flipFlop8|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.324      ;
+; 0.217 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.338      ;
+; 0.222 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop1|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.343      ;
+; 0.223 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.344      ;
+; 0.223 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.344      ;
+; 0.260 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.381      ;
+; 0.266 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.581      ;
+; 0.274 ; DFlipFlop:flipFlop4|Q          ; DFlipFlop:flipFlop5|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.395      ;
+; 0.275 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.396      ;
+; 0.295 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.610      ;
+; 0.302 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.423      ;
+; 0.302 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.423      ;
+; 0.307 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.428      ;
+; 0.309 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[1] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.430      ;
+; 0.313 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.628      ;
+; 0.314 ; DFlipFlop:flipFlop1|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.435      ;
+; 0.316 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.437      ;
+; 0.316 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.437      ;
 ; 0.320 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.635      ;
-; 0.333 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.648      ;
-; 0.334 ; DFlipFlop:flipFlop3|Q          ; DFlipFlop:flipFlop4|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.454      ;
-; 0.334 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.649      ;
-; 0.341 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.656      ;
-; 0.342 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop2|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.462      ;
-; 0.347 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.662      ;
-; 0.347 ; DFlipFlop:flipFlop5|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.467      ;
-; 0.352 ; DFlipFlop:flipFlop6|Q          ; DFlipFlop:flipFlop7|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.472      ;
-; 0.364 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.679      ;
-; 0.378 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.498      ;
-; 0.399 ; DFlipFlop:flipFlop2|Q          ; DFlipFlop:flipFlop3|Q          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.519      ;
-; 0.405 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.720      ;
-; 0.421 ; controlROM:cR1|s_clkCounter[3] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.736      ;
-; 0.436 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.751      ;
-; 0.446 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.045      ; 0.575      ;
-; 0.452 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.572      ;
-; 0.462 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.582      ;
-; 0.463 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.583      ;
-; 0.465 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.585      ;
-; 0.466 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.036      ; 0.586      ;
-; 0.494 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.809      ;
-; 0.502 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.817      ;
-; 0.504 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.819      ;
-; 0.556 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.871      ;
-; 0.569 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.884      ;
-; 0.576 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.891      ;
-; 0.639 ; DFlipFlop:flipFlop5|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.954      ;
+; 0.332 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.647      ;
+; 0.333 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[4] ; clk          ; clk         ; 0.000        ; 0.231      ; 0.648      ;
+; 0.380 ; DFlipFlop:flipFlop8|Q          ; DFlipFlop:flipFlop6|Q          ; clk          ; clk         ; 0.000        ; 0.037      ; 0.501      ;
+; 0.381 ; DFlipFlop:flipFlop6|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.696      ;
+; 0.393 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.708      ;
+; 0.410 ; controlROM:cR1|s_clkCounter[4] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.045      ; 0.539      ;
+; 0.431 ; DFlipFlop:flipFlop3|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.746      ;
+; 0.447 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.762      ;
+; 0.450 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.765      ;
+; 0.451 ; controlROM:cR1|s_clkCounter[2] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.572      ;
+; 0.460 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.581      ;
+; 0.461 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[2] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.582      ;
+; 0.463 ; controlROM:cR1|s_clkCounter[0] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.584      ;
+; 0.464 ; controlROM:cR1|s_clkCounter[1] ; controlROM:cR1|s_clkCounter[3] ; clk          ; clk         ; 0.000        ; 0.037      ; 0.585      ;
+; 0.471 ; DFlipFlop:flipFlop8|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.786      ;
+; 0.495 ; DFlipFlop:flipFlop4|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.810      ;
+; 0.532 ; DFlipFlop:flipFlop7|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.847      ;
+; 0.572 ; DFlipFlop:flipFlop1|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.887      ;
+; 0.573 ; DFlipFlop:flipFlop2|Q          ; controlROM:cR1|flag            ; clk          ; clk         ; 0.000        ; 0.231      ; 0.888      ;
 +-------+--------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -577,10 +578,10 @@ No synchronizer chains to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -0.584 ; 0.178 ; N/A      ; N/A     ; -3.000              ;
-;  clk             ; -0.584 ; 0.178 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -2.46  ; 0.0   ; 0.0      ; 0.0     ; -17.498             ;
-;  clk             ; -2.460 ; 0.000 ; N/A      ; N/A     ; -17.498             ;
+; Worst-case Slack ; -0.589 ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -0.589 ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -2.266 ; 0.0   ; 0.0      ; 0.0     ; -17.416             ;
+;  clk             ; -2.266 ; 0.000 ; N/A      ; N/A     ; -17.416             ;
 +------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -589,15 +590,7 @@ No synchronizer chains to report.
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 ; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; checker_flag  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[0]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[1]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[2]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[3]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[4]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[5]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[6]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; rem_out[7]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; error         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_NCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
@@ -621,15 +614,7 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; checker_flag  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
-; rem_out[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
-; rem_out[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.4 V               ; -0.00557 V          ; 0.238 V                              ; 0.014 V                              ; 2.9e-10 s                   ; 3.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.4 V              ; -0.00557 V         ; 0.238 V                             ; 0.014 V                             ; 2.9e-10 s                  ; 3.48e-10 s                 ; No                        ; Yes                       ;
-; rem_out[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.34 V              ; -0.00633 V          ; 0.232 V                              ; 0.083 V                              ; 1.94e-09 s                  ; 1.83e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.34 V             ; -0.00633 V         ; 0.232 V                             ; 0.083 V                             ; 1.94e-09 s                 ; 1.83e-09 s                 ; No                        ; Yes                       ;
-; rem_out[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
-; rem_out[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
-; rem_out[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.34 V              ; -0.00633 V          ; 0.232 V                              ; 0.083 V                              ; 1.94e-09 s                  ; 1.83e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.34 V             ; -0.00633 V         ; 0.232 V                             ; 0.083 V                             ; 1.94e-09 s                 ; 1.83e-09 s                 ; No                        ; Yes                       ;
-; rem_out[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
-; rem_out[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.16e-09 V                   ; 2.37 V              ; -0.00861 V          ; 0.168 V                              ; 0.038 V                              ; 6.79e-10 s                  ; 6.49e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 5.16e-09 V                  ; 2.37 V             ; -0.00861 V         ; 0.168 V                             ; 0.038 V                             ; 6.79e-10 s                 ; 6.49e-10 s                 ; No                        ; Yes                       ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.29e-09 V                   ; 2.39 V              ; -0.00317 V          ; 0.179 V                              ; 0.007 V                              ; 4.7e-10 s                   ; 4.72e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 7.29e-09 V                  ; 2.39 V             ; -0.00317 V         ; 0.179 V                             ; 0.007 V                             ; 4.7e-10 s                  ; 4.72e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_NCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.76e-09 V                   ; 2.4 V               ; -0.034 V            ; 0.102 V                              ; 0.065 V                              ; 2.49e-10 s                  ; 3.49e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.76e-09 V                  ; 2.4 V              ; -0.034 V           ; 0.102 V                             ; 0.065 V                             ; 2.49e-10 s                 ; 3.49e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.0335 V           ; 0.156 V                              ; 0.089 V                              ; 2.68e-10 s                  ; 2.6e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.0335 V          ; 0.156 V                             ; 0.089 V                             ; 2.68e-10 s                 ; 2.6e-10 s                  ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -640,15 +625,7 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; checker_flag  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
-; rem_out[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
-; rem_out[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.36 V              ; -0.00623 V          ; 0.121 V                              ; 0.03 V                               ; 4.4e-10 s                   ; 4.28e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.36 V             ; -0.00623 V         ; 0.121 V                             ; 0.03 V                              ; 4.4e-10 s                  ; 4.28e-10 s                 ; Yes                       ; Yes                       ;
-; rem_out[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.33 V              ; -0.00252 V          ; 0.203 V                              ; 0.046 V                              ; 2.34e-09 s                  ; 2.24e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.33 V             ; -0.00252 V         ; 0.203 V                             ; 0.046 V                             ; 2.34e-09 s                 ; 2.24e-09 s                 ; Yes                       ; Yes                       ;
-; rem_out[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
-; rem_out[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
-; rem_out[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.33 V              ; -0.00252 V          ; 0.203 V                              ; 0.046 V                              ; 2.34e-09 s                  ; 2.24e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.33 V             ; -0.00252 V         ; 0.203 V                             ; 0.046 V                             ; 2.34e-09 s                 ; 2.24e-09 s                 ; Yes                       ; Yes                       ;
-; rem_out[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
-; rem_out[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 8.13e-07 V                   ; 2.35 V              ; -0.00662 V          ; 0.129 V                              ; 0.049 V                              ; 8.55e-10 s                  ; 8.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 8.13e-07 V                  ; 2.35 V             ; -0.00662 V         ; 0.129 V                             ; 0.049 V                             ; 8.55e-10 s                 ; 8.01e-10 s                 ; No                        ; Yes                       ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.21e-06 V                   ; 2.36 V              ; -0.00833 V          ; 0.113 V                              ; 0.035 V                              ; 6.32e-10 s                  ; 5.89e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.21e-06 V                  ; 2.36 V             ; -0.00833 V         ; 0.113 V                             ; 0.035 V                             ; 6.32e-10 s                 ; 5.89e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_NCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.93e-07 V                   ; 2.37 V              ; -0.0278 V           ; 0.106 V                              ; 0.115 V                              ; 2.69e-10 s                  ; 4.05e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.93e-07 V                  ; 2.37 V             ; -0.0278 V          ; 0.106 V                             ; 0.115 V                             ; 2.69e-10 s                 ; 4.05e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.76e-07 V                   ; 2.36 V              ; -0.00524 V          ; 0.088 V                              ; 0.006 V                              ; 4.05e-10 s                  ; 3.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.76e-07 V                  ; 2.36 V             ; -0.00524 V         ; 0.088 V                             ; 0.006 V                             ; 4.05e-10 s                 ; 3.35e-10 s                 ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -659,15 +636,7 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; checker_flag  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
-; rem_out[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
-; rem_out[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.72 V              ; -0.0199 V           ; 0.186 V                              ; 0.027 V                              ; 2.63e-10 s                  ; 2.76e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.72 V             ; -0.0199 V          ; 0.186 V                             ; 0.027 V                             ; 2.63e-10 s                 ; 2.76e-10 s                 ; Yes                       ; Yes                       ;
-; rem_out[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.65 V              ; -0.0109 V           ; 0.234 V                              ; 0.125 V                              ; 1.64e-09 s                  ; 1.59e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.65 V             ; -0.0109 V          ; 0.234 V                             ; 0.125 V                             ; 1.64e-09 s                 ; 1.59e-09 s                 ; No                        ; Yes                       ;
-; rem_out[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
-; rem_out[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
-; rem_out[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.65 V              ; -0.0109 V           ; 0.234 V                              ; 0.125 V                              ; 1.64e-09 s                  ; 1.59e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.65 V             ; -0.0109 V          ; 0.234 V                             ; 0.125 V                             ; 1.64e-09 s                 ; 1.59e-09 s                 ; No                        ; Yes                       ;
-; rem_out[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
-; rem_out[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.16e-08 V                   ; 2.71 V              ; -0.0171 V           ; 0.273 V                              ; 0.065 V                              ; 4.95e-10 s                  ; 5.37e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.16e-08 V                  ; 2.71 V             ; -0.0171 V          ; 0.273 V                             ; 0.065 V                             ; 4.95e-10 s                 ; 5.37e-10 s                 ; No                        ; Yes                       ;
+; error         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.66e-08 V                   ; 2.72 V              ; -0.0215 V           ; 0.161 V                              ; 0.061 V                              ; 4.44e-10 s                  ; 4.06e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.66e-08 V                  ; 2.72 V             ; -0.0215 V          ; 0.161 V                             ; 0.061 V                             ; 4.44e-10 s                 ; 4.06e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_NCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.06e-08 V                   ; 2.86 V              ; -0.0341 V           ; 0.364 V                              ; 0.046 V                              ; 1.17e-10 s                  ; 2.6e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 3.06e-08 V                  ; 2.86 V             ; -0.0341 V          ; 0.364 V                             ; 0.046 V                             ; 1.17e-10 s                 ; 2.6e-10 s                  ; No                        ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.81e-08 V                   ; 2.72 V              ; -0.0548 V           ; 0.144 V                              ; 0.087 V                              ; 2.55e-10 s                  ; 2.14e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.81e-08 V                  ; 2.72 V             ; -0.0548 V          ; 0.144 V                             ; 0.087 V                             ; 2.55e-10 s                 ; 2.14e-10 s                 ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -678,7 +647,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 41       ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 46       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -688,7 +657,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 41       ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 46       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -714,8 +683,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
 ; Unconstrained Input Port Paths  ; 1     ; 1    ;
-; Unconstrained Output Ports      ; 9     ; 9    ;
-; Unconstrained Output Port Paths ; 9     ; 9    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
 
 
@@ -737,21 +706,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                           ;
-+--------------+---------------------------------------------------------------------------------------+
-; Output Port  ; Comment                                                                               ;
-+--------------+---------------------------------------------------------------------------------------+
-; checker_flag ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+--------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; error       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -763,21 +724,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                           ;
-+--------------+---------------------------------------------------------------------------------------+
-; Output Port  ; Comment                                                                               ;
-+--------------+---------------------------------------------------------------------------------------+
-; checker_flag ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; rem_out[7]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+--------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; error       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +--------------------------+
@@ -786,7 +739,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Dec 07 18:53:55 2020
+    Info: Processing started: Tue Dec 08 14:48:28 2020
 Info: Command: quartus_sta checker -c checker
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -803,14 +756,14 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.584
+Info (332146): Worst-case setup slack is -0.589
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.584              -2.460 clk 
-Info (332146): Worst-case hold slack is 0.342
+    Info (332119):    -0.589              -2.266 clk 
+Info (332146): Worst-case hold slack is 0.341
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.342               0.000 clk 
+    Info (332119):     0.341               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
@@ -823,10 +776,10 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.421
+Info (332146): Worst-case setup slack is -0.398
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.421              -1.340 clk 
+    Info (332119):    -0.398              -1.272 clk 
 Info (332146): Worst-case hold slack is 0.297
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -839,10 +792,10 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000             -17.000 clk 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 0.121
+Info (332146): Worst-case setup slack is 0.106
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.121               0.000 clk 
+    Info (332119):     0.106               0.000 clk 
 Info (332146): Worst-case hold slack is 0.178
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -854,12 +807,12 @@ Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -17.498 clk 
+    Info (332119):    -3.000             -17.416 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Mon Dec 07 18:53:57 2020
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Tue Dec 08 14:48:30 2020
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

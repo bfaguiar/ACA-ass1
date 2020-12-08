@@ -9,15 +9,7 @@ clk => DFlipFlop:flipFlop7.clk
 clk => DFlipFlop:flipFlop8.clk
 clk => controlROM:cR1.clk
 data_in => xor2_1:xor1.in0
-checker_flag << controlROM:cR1.flag
-rem_out[0] << DFlipFlop:flipFlop1.Q
-rem_out[1] << DFlipFlop:flipFlop2.Q
-rem_out[2] << DFlipFlop:flipFlop3.Q
-rem_out[3] << DFlipFlop:flipFlop4.Q
-rem_out[4] << DFlipFlop:flipFlop5.Q
-rem_out[5] << DFlipFlop:flipFlop6.Q
-rem_out[6] << DFlipFlop:flipFlop7.Q
-rem_out[7] << DFlipFlop:flipFlop8.Q
+error <= controlROM:cR1.flag
 
 
 |checker|xor2_1:xor1
@@ -139,14 +131,14 @@ clk => s_clkCounter[1].CLK
 clk => s_clkCounter[2].CLK
 clk => s_clkCounter[3].CLK
 clk => s_clkCounter[4].CLK
-rem_in[0] => Equal1.IN7
-rem_in[1] => Equal1.IN6
-rem_in[2] => Equal1.IN5
-rem_in[3] => Equal1.IN4
-rem_in[4] => Equal1.IN3
-rem_in[5] => Equal1.IN2
-rem_in[6] => Equal1.IN1
-rem_in[7] => Equal1.IN0
+rem_in[0] => flag.IN0
+rem_in[1] => flag.IN1
+rem_in[2] => flag.IN1
+rem_in[3] => flag.IN1
+rem_in[4] => flag.IN1
+rem_in[5] => flag.IN1
+rem_in[6] => flag.IN1
+rem_in[7] => flag.IN1
 flag <= flag~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,5 +1,5 @@
 Flow report for checker
-Mon Dec 07 19:10:39 2020
+Tue Dec 08 14:51:43 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Dec 07 19:10:39 2020       ;
+; Flow Status                        ; Successful - Tue Dec 08 14:51:43 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; checker                                     ;
 ; Top-level Entity Name              ; checker                                     ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 16 / 14,400 ( < 1 % )                       ;
+; Total logic elements               ; 17 / 14,400 ( < 1 % )                       ;
 ;     Total combinational functions  ; 15 / 14,400 ( < 1 % )                       ;
 ;     Dedicated logic registers      ; 14 / 14,400 ( < 1 % )                       ;
 ; Total registers                    ; 14                                          ;
-; Total pins                         ; 11 / 81 ( 14 % )                            ;
+; Total pins                         ; 3 / 81 ( 4 % )                              ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 552,960 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/07/2020 18:53:38 ;
+; Start date & time ; 12/08/2020 14:48:12 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; checker             ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 152737599888149.160736721813796        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 152737599888149.160743889211204        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -100,26 +100,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4850 MB             ; 00:00:21                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 5588 MB             ; 00:00:05                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4750 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4764 MB             ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4840 MB             ; 00:00:22                           ;
+; Fitter               ; 00:00:04     ; 1.0                     ; 5585 MB             ; 00:00:06                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 4751 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4765 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4709 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4703 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4710 MB             ; 00:00:01                           ;
-; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:44                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:36                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -139,14 +131,6 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-F3JMSHL  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -158,14 +142,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off checker -c chec
 quartus_asm --read_settings_files=off --write_settings_files=off checker -c checker
 quartus_sta checker -c checker
 quartus_eda --read_settings_files=off --write_settings_files=off checker -c checker
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform2.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform2.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/ checker -c checker
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off checker -c checker --vector_source=C:/Users/Bruno/Documents/Assignment1/checker/Waveform.vwf --testbench_file=C:/Users/Bruno/Documents/Assignment1/checker/simulation/qsim/Waveform.vwf.vht
