@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity encoder is
 	
 	port(	a : in std_logic_vector(15 downto 0);
-			x : out std_logic_vector(7 downto 0)
+			x : out std_logic_vector(23 downto 0)
 	);
 	
 end encoder;
@@ -93,5 +93,6 @@ architecture behavioral of encoder is
 		Y1	:	xor2_1 port map(s_b(21), s_b(22), s_b(23));
 		Z1 :	xor2_1 port map(s_b(23), s_a(13), s_b(24));
 		x(0) <= s_b(24);
+		x(23 downto 8) <= a;
 
 end behavioral;
